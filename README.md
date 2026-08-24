@@ -1,4 +1,4 @@
-# YouTube Doubt Solver
+#Youtube-RAG-chatbot
 
 A Chrome extension that lets you ask questions about any YouTube video and get instant, transcript-grounded answers — no more scrubbing through long videos to find the part you need.
 
@@ -18,14 +18,17 @@ This is a Retrieval-Augmented Generation (RAG) pipeline:
 - **Frontend:** Chrome Extension (Manifest V3), vanilla JS/HTML/CSS
 
 ## Project structure
+
+```
 ├── backend/
-│ ├── main.py # FastAPI server + RAG pipeline
-│ └── requirements.txt # Python dependencies
+│   ├── main.py           # FastAPI server + RAG pipeline
+│   └── requirements.txt   # Python dependencies
 └── extension/
-├── manifest.json # Chrome extension config
-├── popup.html # Extension UI
-├── popup.js # Extension logic
-└── icon.png
+    ├── manifest.json      # Chrome extension config
+    ├── popup.html         # Extension UI
+    ├── popup.js           # Extension logic
+    └── icon.png
+```
 
 ## Setup & run locally
 
@@ -40,40 +43,14 @@ pip install -r requirements.txt
 
 Create a `.env` file inside `backend/` with:
 
-
+```
 GROQ_API_KEY=your_groq_api_key_here
-
-(Get a free key at https://console.groq.com/keys)
-
-Start the server:
-```bash
-python -m uvicorn main:app --reload --port 8000
 ```
 
-### Chrome Extension
-
-1. Go to `chrome://extensions`
-2. Enable **Developer mode** (top right)
-3. Click **Load unpacked**
-4. Select the `extension` folder
-
-Make sure the backend server is running, then open any YouTube video, click the extension icon, and ask a question.
-
-## Future improvements
-
-- Ragas / LangSmith evaluation (faithfulness, answer relevancy, context precision, context recall)
-- Hybrid retrieval + reranking
-- Multi-query generation and query rewriting
-- Deploy backend for use without running locally
-
-## Demo
-
-*(add a screen recording or GIF here)*
-
-
-(Get a free key at https://console.groq.com/keys)
+(Get a free key at [console.groq.com/keys](https://console.groq.com/keys))
 
 Start the server:
+
 ```bash
 python -m uvicorn main:app --reload --port 8000
 ```
