@@ -1,4 +1,4 @@
-#Youtube-RAG-chatbot
+## Youtube-RAG-chatbot
 
 A Chrome extension that lets you ask questions about any YouTube video and get instant, transcript-grounded answers — no more scrubbing through long videos to find the part you need.
 
