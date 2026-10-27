@@ -1,4 +1,4 @@
-cat > README.md <<'EOF'
+
 # 🎥 YouTube RAG Chatbot
 
 A Chrome extension with a FastAPI backend that answers natural-language questions about a YouTube video using retrieval-augmented generation (RAG).
@@ -53,4 +53,4 @@ python -m uvicorn main:app --reload
 - Only works on videos that have a transcript or captions.
 - Very long videos take longer to index.
 - Answers are limited to what is in the transcript.
-EOF
+
