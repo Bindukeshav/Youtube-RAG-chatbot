@@ -1,56 +1,144 @@
+# YouTube Video Q&A Chatbot (RAG)
 
-# 🎥 YouTube RAG Chatbot
+Ask questions about any YouTube video and get answers grounded in its transcript. If the answer is not in the video, the bot says so instead of making something up.
 
-A Chrome extension with a FastAPI backend that answers natural-language questions about a YouTube video using retrieval-augmented generation (RAG).
+![Demo](demo.gif)
+<!-- Replace demo.gif with your recording (30-60 seconds of the extension answering a question) -->
 
-![Screenshot](screenshot.png)
+## Features
+
+- Answers questions using only the video's transcript (retrieval-augmented generation)
+- "Not found" fallback for questions the video does not answer, so it does not hallucinate
+- FastAPI backend with a simple `/ask` endpoint
+- Chrome extension: ask questions directly on the YouTube page
+- Evaluation scripts and a 15-question test set included
 
 ## How it works
 
-1. The extension sends the video link and your question to the FastAPI backend.
-2. The backend fetches the video transcript and splits it into chunks.
-3. Chunks are embedded with Sentence-Transformers and indexed in FAISS.
-4. The most relevant chunks are retrieved and passed to a Groq-hosted LLM, which writes the answer.
+```
+YouTube video ID
+      |
+      v
+Fetch transcript -> split into chunks -> embed (Sentence-Transformers)
+      |
+      v
+Store in FAISS vector index
+      |
+Question -> embed -> retrieve top matching chunks
+      |
+      v
+LLM (Groq) answers from the retrieved chunks only
+      |
+      v
+Answer + sources (or "I couldn't find anything about that in this video.")
+```
 
-## Tech Stack
+## Tech stack
 
-- **FastAPI** for the backend API
-- **LangChain** for text splitting and prompt/LLM orchestration
-- **FAISS** for vector search over transcript chunks
-- **Sentence-Transformers** for embeddings
-- **Groq** (Llama 3.1 8B Instant) for answer generation
-- **Chrome Extension** (JavaScript) for the user interface on YouTube pages
+Python, FastAPI, LangChain, FAISS, Sentence-Transformers, Groq LLM API, JavaScript (Chrome extension)
 
-## Project Structure
-├── backend/ # FastAPI app (main.py)
-├── extension/ # Chrome extension
+## Project structure
+
+```
+Youtube-RAG-chatbot/
+├── backend/          # FastAPI app (main.py)
+├── extension/        # Chrome extension (manifest.json, popup.html, popup.js)
+├── eval/             # Evaluation: questions.csv, run_questions.py, check_eval.py, metrics.py
 ├── requirements.txt
-├── .env.example
-└── README.md
-
+└── .env.example      # Copy to .env and add your API key
+```
 
 ## Setup
 
-1. Clone the repo
+**1. Clone and install**
+
 ```bash
 git clone https://github.com/Bindukeshav/Youtube-RAG-chatbot.git
 cd Youtube-RAG-chatbot
-```
-2. Install dependencies
-```bash
+python -m venv .venv
+source .venv/Scripts/activate      # Windows (Git Bash). On Mac/Linux: source .venv/bin/activate
 pip install -r requirements.txt
 ```
-3. Copy `.env.example` to `.env` and add your Groq API key
-4. Start the backend
+
+**2. Add your API key**
+
+Copy `.env.example` to `.env` and fill in your Groq API key:
+
+```bash
+cp .env.example .env
+```
+
+**3. Run the backend**
+
 ```bash
 cd backend
-python -m uvicorn main:app --reload
+uvicorn main:app --reload
 ```
-5. Open `chrome://extensions`, enable Developer mode, click **Load unpacked**, and select the `extension` folder
+
+Open http://127.0.0.1:8000/docs to try the API in Swagger.
+
+**4. Load the Chrome extension**
+
+1. Open `chrome://extensions`
+2. Turn on **Developer mode** (top right)
+3. Click **Load unpacked** and select the `extension/` folder
+4. Open any YouTube video, click the extension icon and ask a question
+
+## API
+
+`POST /ask`
+
+```json
+{
+  "video_id": "6yl3NQwG9Mc",
+  "question": "What is the silliest rumor Mira has heard about herself?"
+}
+```
+
+Response:
+
+```json
+{
+  "answer": "...",
+  "sources": [...]
+}
+```
+
+The `video_id` is the part of the YouTube URL after `v=` (and before any `&`).
+
+## Evaluation
+
+I tested the bot on a 15-question set built from one interview video: 11 questions the video answers and 4 it does not.
+
+| Metric | Result |
+|---|---|
+| Overall accuracy | **86.7%** (13/15) |
+| Answerable questions answered | **81.8%** (9/11) |
+| Unanswerable questions correctly declined | **100%** (4/4) |
+| Average response time | **~1.2 s** |
+
+Run it yourself:
+
+```bash
+cd eval
+python run_questions.py     # sends questions.csv to /ask, writes results.csv
+python check_eval.py        # compares answers with expected results
+python metrics.py           # prints the metrics
+```
 
 ## Limitations
 
-- Only works on videos that have a transcript or captions.
-- Very long videos take longer to index.
-- Answers are limited to what is in the transcript.
+- Two answerable questions were missed. One needed facts spread across different parts of the transcript (children's ages), and one used a phrase that appears only once in a long passage ("red line").
+- The test set is small and uses a single video, so the numbers are indicative, not a benchmark.
+- Works only for videos that have a transcript or captions available.
 
+## Future improvements
+
+- Hybrid search (keyword + vector) to catch exact phrases
+- Larger evaluation set across several videos and languages
+- Tune chunk size and overlap, and the number of retrieved chunks
+- Show timestamps so answers link back to the exact moment in the video
+
+## Author
+
+**Bindu K** · [GitHub](https://github.com/Bindukeshav) · [LinkedIn](https://linkedin.com/in/bindu-keshav-380b34425)
