@@ -1,0 +1,40 @@
+id,video_id,timestamp_sec,question,label,answer,cited_times,verified,notes
+1,rKpltaOMFdc,801,How do I take a leap in my career?,vague,"To take a leap in your career, treat rejections as one step closer to a “yes” and don’t take them personally – keep moving forward [10:30]. Use a quick decision rule, like the 5‑second rule, to trust your gut and act before doubt sets in [16:55]. Shift your focus to a larger purpose or legacy, zooming out to see the bigger picture of what you want to leave behind [22:10]. Finally, let the fear of staying stagnant drive you to try rather than stay comfortable, so you can look back proud of the effort you made [14:00].",10:30 | 22:10,yes,its correct what she said about
+2,rKpltaOMFdc,340,"After a period of unemployment, how do you turn it into a chance to build your own path instead of just taking the next available job?",specific,"After a period of unemployment, the speaker says they “believe in the power of proximity” and treat every rejection or setback as “one less one before my yes” ([05:15], [10:30]). By reframing each setback as a step closer to a better opportunity and not taking it personally, they keep moving forward and look for roles that align with their own goals instead of simply accepting the next available job.",05:15 | 10:30,yes,correct
+3,rKpltaOMFdc,801,"What should you work out before leaving a stable job for your own path, and what is a realistic first step?",specific,"- **What to work out before leaving a stable job**  
+  *You should calculate your finances—how much you can save, whether you can afford a house next year, and what other “elements of life” (money, stability, etc.) will support you.*  
+  *(See [16:20] and [16:55])*
+
+- **Realistic first step**  
+  *Use the 5‑second rule: as soon as you feel a gut intuition about the next move, hold onto that feeling for five seconds before your mind starts doubting, then decide to act on it.*  
+  *(See [16:20], [16:55], and [15:45])*
+",16:20,yes,true
+4,rKpltaOMFdc,981,How can physical signals like stress or tension help you judge whether a career decision is right for you?,specific,"Physical signals such as stress or tension can act as a body‑based check on whether a career move feels right. When you’re considering a change, the body often sends a warning if something is off—e.g., neck pain or a tightness that appears even when you’re not on a computer, as noted at **[18:40]**. The speaker also says that “the body tells you exactly what you want” and that a quick 5‑second pause can capture that feeling before the mind starts doubting (**[16:20]**). If you notice tension or discomfort during the decision‑making process, it’s a signal that the choice may not be aligned with you; conversely, a sense of ease or excitement would suggest alignment (**[18:05]**, **[19:15]**).",18:05 | 19:15 | 18:40,yes,true
+5,rKpltaOMFdc,1245,"What does “finding your voice” mean at work, and what practical steps help you start speaking up with confidence?",specific,"Finding your voice at work means figuring out how you want to present yourself and what you stand for in the professional world. As the speaker explains at **[21:00]**, it’s about more than just the sound of your voice—it’s about how you portray yourself to the world and the choices you make in your career.  
+
+Practical steps to start speaking up with confidence include:  
+- **Isolate your own voice** by reflecting on your values and purpose (see **[26:15]**).  
+- **Evaluate the voices around you**—identify the five closest people and assess whether they enhance or dim your voice (see **[26:50]**).  
+- **Eliminate negative influences** and protect your core voice, being “cutthroat” if necessary to keep your authenticity (see **[26:50]**).  
+- **Rebuild and reinforce** the positive voices that support you, continually refining what truly feels like you (see **[28:00]**).  
+
+These steps help you build confidence in speaking up, as they focus on self‑clarity, supportive relationships, and active protection of your authentic voice.",21:00 | 26:15,yes,true
+6,rKpltaOMFdc,1384,"What is the Voice Layer Theory, and how do you use it to build confidence in how you express yourself?",specific,"The **Voice Layer Theory** is a framework the speaker created to map out the different layers that shape how we sound and how we present ourselves.  
+- **[22:45]** The theory starts with the earliest influence: the parents or guardians who raise us, which sets the foundation for our voice.  
+- **[26:15]** It then moves to evaluating the voices around us—specifically the five closest people—so we can see whether they are enhancing or dampening our own voice.  
+- **[28:00]** Finally, it involves isolating our own voice, rebuilding the surrounding voices, and continually checking in to keep our expression authentic and centered.
+
+By using this layered approach—identifying the foundational influences, assessing the impact of close relationships, and actively shaping the voices we allow to coexist with ours—the speaker builds confidence in how they express themselves, knowing that their voice is an evolving, self‑directed layer rather than a fixed, reactive one.",22:45 | 28:00,yes,true
+7,rKpltaOMFdc,2040,How can someone who is always “nice” become assertive without feeling rude or losing relationships?,specific,"To stay kind while becoming assertive, the speaker suggests that **assertiveness is not the same as being mean**—it’s about clearly communicating your boundaries (34:25, 39:05). 1) **Recognize the difference** between being nice and being assertive and dissolve the false choice that you must pick one or the other (34:25). 2) **State what you want** in a respectful, direct way, so you get the outcome you need without walking over others (39:05). 3) **Use calm delivery**: take a beat, breathe, and respond thoughtfully rather than reacting impulsively (41:25, 42:00). 4) **Remember that saying “no” to yourself** is not rude; it’s a healthy way to protect your own needs while still respecting others (39:40). By combining clear boundaries with a gentle tone, you can assert yourself without damaging relationships.",39:05 | 34:25 | 39:40,yes,true
+8,rKpltaOMFdc,2700,"Which daily habits help you carve out time and mental space for yourself, and how do you start one?",specific,"- **Daily habits that carve out time and mental space**  
+  - Spending time on your own (e.g., alone time, personal reflection)  
+  - Meditation  
+  - Journaling notes on your phone or in a physical journal  
+  - Looking at photo albums to reflect on memories  
+
+  These are described at **[44:55]** where the speaker says, “I do that through spending time on my own… meditation… I like to journal… people have different outlets.”
+
+- **How to start one**  
+  - Pick one of the habits (e.g., journaling) and set aside a few minutes each day for it.  
+  - Use a notes app or a journal to capture thoughts and feelings.  
+  - Make it a regular check‑in, just as the speaker does, to create space for yourself.",44:55,yes,true

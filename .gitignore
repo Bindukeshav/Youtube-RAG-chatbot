@@ -1,0 +1,10 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+pyvenv.cfg
+CACHEDIR.TAG
+__pycache__/
+*.pyc
+*.log

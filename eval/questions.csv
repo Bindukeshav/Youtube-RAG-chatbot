@@ -1,0 +1,25 @@
+
+id,video_id,timestamp_sec,question,label,answerable
+1,rKpltaOMFdc,801,"How do I take a leap in my career?",vague,yes
+
+2,rKpltaOMFdc,340,"After a period of unemployment, how do you turn it into a chance to build your own path instead of just taking the next available job?",specific,yes
+
+3,rKpltaOMFdc,801,"What should you work out before leaving a stable job for your own path, and what is a realistic first step?",specific,yes
+
+4,rKpltaOMFdc,981,"How can physical signals like stress or tension help you judge whether a career decision is right for you?",specific,yes
+
+5,rKpltaOMFdc,1245,"What does “finding your voice” mean at work, and what practical steps help you start speaking up with confidence?",specific,yes
+
+6,rKpltaOMFdc,1384,"What is the Voice Layer Theory, and how do you use it to build confidence in how you express yourself?",specific,yes
+
+7,rKpltaOMFdc,2040,"How can someone who is always “nice” become assertive without feeling rude or losing relationships?",specific,yes
+
+8,rKpltaOMFdc,2700,"Which daily habits help you carve out time and mental space for yourself, and how do you start one?",specific,yes
+
+9,rKpltaOMFdc,0,"What is Nimi Mehta's monthly income from public speaking?",specific,no
+10,rKpltaOMFdc,0,"Which microphone model is used to record this episode?",specific,no
+11,rKpltaOMFdc,74,"What is the speaker's favorite food?",specific,yes
+12,rKpltaOMFdc,0,"What does the speaker recommend for treating a stammer?",specific,no
+13,rKpltaOMFdc,0,"How many podcast episodes has the host recorded so far?",specific,no
+14,rKpltaOMFdc,0,"Which city did the speaker grow up in?",specific,no
+15,rKpltaOMFdc,0,"What is the speaker's phone number?",specific,no

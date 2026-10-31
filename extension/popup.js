@@ -7,9 +7,16 @@ function clearEmptyState() {
   if (empty) empty.remove();
 }
 
-function formatMarkdown(text) {
+function timeToSeconds(t) {
+  return t.split(":").reduce((total, part) => total * 60 + Number(part), 0);
+}
+
+function formatMarkdown(text, videoId) {
   let safe = text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   safe = safe.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+  safe = safe.replace(/\[(\d{1,2}(?::\d{2}){1,2})\]/g, (match, t) =>
+    `<a href="https://youtu.be/${encodeURIComponent(videoId)}?t=${timeToSeconds(t)}" target="_blank" rel="noopener">${t}</a>`
+  );
 
   const lines = safe.split("\n");
   let html = "";
@@ -33,7 +40,7 @@ function formatMarkdown(text) {
   return html;
 }
 
-function addBubble(text, who) {
+function addBubble(text, who, videoId) {
   clearEmptyState();
   const row = document.createElement("div");
   row.className = "row " + who;
@@ -46,7 +53,7 @@ function addBubble(text, who) {
   bubble.className = "bubble";
 
   if (who === "bot") {
-    bubble.innerHTML = formatMarkdown(text);
+    bubble.innerHTML = formatMarkdown(text, videoId);
   } else {
     bubble.textContent = text;
   }
@@ -106,7 +113,7 @@ async function ask() {
     });
     const data = await res.json();
     typingRow.remove();
-    addBubble(data.answer, "bot");
+    addBubble(data.answer, "bot", videoId);
   } catch (e) {
     typingRow.remove();
     addBubble("Could not reach the server. Is it running?", "bot");
