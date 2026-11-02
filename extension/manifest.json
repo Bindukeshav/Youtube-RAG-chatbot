@@ -4,7 +4,7 @@
   "version": "1.0",
   "description": "Ask questions about the YouTube video you're watching",
   "permissions": ["activeTab", "scripting"],
-  "host_permissions": ["http://localhost:8000/*"],
+  "host_permissions": ["https://youtube-rag.onrender.com/*"],
   "action": {
     "default_popup": "popup.html"
   }
