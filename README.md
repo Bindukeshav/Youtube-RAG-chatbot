@@ -1,6 +1,9 @@
 # YouTube Video Q&A Chatbot (RAG)
 
 Ask questions about any YouTube video and get answers grounded in its transcript. If the answer is not in the video, the bot says so instead of making something up.
+##image
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4e301ae2-52c3-4332-9beb-e4752d2a4d9c" />
+
 
 ## Demo
 
