@@ -2,7 +2,9 @@
 
 Ask questions about any YouTube video and get answers grounded in its transcript. If the answer is not in the video, the bot says so instead of making something up.
 
-![Demo](demo.gif)
+## Demo
+
+▶️ [Watch demo on Loom](https://www.loom.com/share/031202edbc964296b3901a5bf5c54100)
 <!-- Replace demo.gif with your recording (30-60 seconds of the extension answering a question) -->
 
 ## Features
