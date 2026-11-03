@@ -13,7 +13,8 @@ from langchain_groq import ChatGroq
 
 # Use the community implementation available in the project's dependencies.
 from langchain_community.embeddings import FastEmbedEmbeddings, HuggingFaceEmbeddings
-
+print("DEBUG groq-related env names:", [k for k in os.environ if "GROQ" in k.upper()], flush=True)
+print("DEBUG GROQ_API_KEY set:", bool(os.getenv("GROQ_API_KEY")), flush=True)
 # Reads GROQ_API_KEY (and GROQ_MODEL, if you add it) from your .env file.
 load_dotenv()
 
