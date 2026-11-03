@@ -12,7 +12,7 @@ from langchain_community.vectorstores import FAISS
 from langchain_groq import ChatGroq
 
 # Use the community implementation available in the project's dependencies.
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_community.embeddings import FastEmbedEmbeddings, HuggingFaceEmbeddings
 
 # Reads GROQ_API_KEY (and GROQ_MODEL, if you add it) from your .env file.
 load_dotenv()
@@ -41,7 +41,7 @@ class AskRequest(BaseModel):
 
 
 # The embedding model turns text into numbers so similar meanings are close together.
-embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+embeddings = FastEmbedEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
 # temperature=0 keeps answers consistent; max_tokens caps the reply length.
 llm = ChatGroq(model=MODEL_NAME, temperature=0, max_tokens=1500)
